@@ -25,7 +25,7 @@ public:
 
 	void crearMonticulo(const string&identificador) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it != mapaMonticulos.end()) cout << "Ya existe el montículo con el identificador " << identificador << '\n';
+		if (it != mapaMonticulos.end()) cout << "Ya existe el montÃ­culo con el identificador " << identificador << '\n';
 		else {
 			ImpColeccFib<T> mont;
 			mapaMonticulos.insert({ identificador, mont });
@@ -34,7 +34,7 @@ public:
 
 	bool isEmpty(const string&identificador) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else return it->second.isEmpty();
 		return false;
 	}
@@ -42,7 +42,7 @@ public:
 
 	void insert(const string&identificador, pair<double, T> pareja) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else { 
 			Nodo* aux = it->second.insertarElem(pareja); 
 			mapaNodos.insert(pair<double, Nodo*>(pareja.first, aux));
@@ -51,7 +51,7 @@ public:
 
 	void deleteMin(const string&identificador) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else {
 			if (!it->second.isEmpty()) {
 				int prio = it->second.borrarMinimo();
@@ -63,7 +63,7 @@ public:
 
 	void decreaseKey(const string&identificador, double priori, double nuevaPriori) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else {
 			auto it2 = mapaNodos.find(priori);
 			if (it2 == mapaNodos.end()) throw std::domain_error("No existe nodo con dicha prioridad");
@@ -81,7 +81,7 @@ public:
 
 	void deleteKey(const string&identificador, double priori) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else {
 			auto it2 = mapaNodos.find(priori);
 			if (it2 == mapaNodos.end()) cout << "No existe un nodo con la prioridad indicada " << identificador << '\n';
@@ -97,7 +97,7 @@ public:
 
 	pair<double, T> findMin(const string&identificador) {
 		auto it = mapaMonticulos.find(identificador);
-		if (it == mapaMonticulos.end()) cout << "No existe el montículo con el identificador " << identificador << '\n';
+		if (it == mapaMonticulos.end()) cout << "No existe el montÃ­culo con el identificador " << identificador << '\n';
 		else {
 			it->second.encuetraMinimo();
 		}
