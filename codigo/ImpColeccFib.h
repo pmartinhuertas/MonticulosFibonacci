@@ -51,7 +51,7 @@ public:
 
 
 	Nodo* insertarElem(pair<double, T> pareja) {
-		//añade nodo si el arbol es vacio
+		//aÃ±ade nodo si el arbol es vacio
 		if (this->minimo == nullptr) {
 			Nodo* aux = new Nodo(pareja, nullptr, nullptr, nullptr, nullptr, false);
 			aux->ant = aux;
@@ -60,7 +60,7 @@ public:
 			return aux;
 		}
 		else {
-			//añade el nodo nuevo
+			//aÃ±ade el nodo nuevo
 			Nodo* temporal = this->minimo->ant;
 			Nodo* aux = new Nodo(pareja, temporal, this->minimo, nullptr, nullptr, false);
 			temporal->sig = aux;
